@@ -1,6 +1,6 @@
 public class WindowSum {
 
-  /* The goal here is to *replace* each element a[i]
+  /** The goal here is to *replace* each element a[i]
      with the sum of a[i] through a[i + n], but only
      if a[i] is positive valued.
 

@@ -1,3 +1,5 @@
+// courtesy https://www.learnjavaonline.org/en/Objects
+
 class Point {
     private double x;
     private double y;
@@ -11,7 +13,6 @@ class Point {
         System.out.println("(" + x + "," + y + ")");
     }
 
-    // Your code goes here
     public void scale() {
         this.x /= 2;
         this.y /= 2;

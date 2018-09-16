@@ -61,5 +61,12 @@ class NBody {
       time += dt;
     }
 
+    // When the simulation is over, i.e. when you’ve reached time T, print out the final state of the universe in the same format as the input.
+    StdOut.printf("%d\n", planets.length);
+    StdOut.printf("%.2e\n", radius);
+    for (Planet p : planets) {
+      StdOut.printf("%11.4e %11.4e %11.4e %11.4e %11.4e %12s\n",
+      p.xxPos, p.yyPos, p.xxVel, p.yyVel, p.mass, p.imgFileName);
+    }
   }
 }

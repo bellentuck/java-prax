@@ -8,6 +8,9 @@ class Planet {
   public String imgFileName;  // filename corresponding to
                               // image for that planet
 
+  public static final double G = 6.67 * 1.0e-11;  // gravitational
+                                                  // constant
+
   public Planet(double xP, double yP, double xV,
                 double yV, double m, String img) {
     xxPos = xP; // equivalently, set `this.xxPos`
@@ -35,5 +38,11 @@ class Planet {
     double dx = this.xxPos - p.xxPos;
     double dy = this.yyPos - p.yyPos;
     return Math.sqrt(dx*dx + dy*dy);
+  }
+
+  public double calcForceExertedBy(Planet p) {
+    // returns a double describing the force exerted on this planet by the given planet.
+    double r = this.calcDistance(p);  // dist btwn planets
+    return (G * this.mass * p.mass) / (r * r);
   }
 }

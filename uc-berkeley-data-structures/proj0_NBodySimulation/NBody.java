@@ -34,6 +34,9 @@ class NBody {
     // graphics technique to prevent flickering in the animation
     StdDraw.enableDoubleBuffering();
 
+    // not yet working, may be that I have a newer version of java but this is the idea:
+    // StdAudio.play("audio/2001.mid");
+
     double time = 0.0;
     while (time < T) {
       double[] xForces = new double[planets.length];

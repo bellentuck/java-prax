@@ -62,4 +62,24 @@ class Planet {
     double r = this.calcDistance(p);
     return -((F * dy) / r);
   }
+
+  public double calcNetForceExertedByX(Planet[] allPlanets) {
+    double net = 0.0;
+    for (Planet p : allPlanets) {
+      if (!this.equals(p)) {
+        net += this.calcForceExertedByX(p);
+      }
+    }
+    return net;
+  }
+
+  public double calcNetForceExertedByY(Planet[] allPlanets) {
+    double net = 0.0;
+    for (Planet p : allPlanets) {
+      if (!this.equals(p)) {
+        net += this.calcForceExertedByY(p);
+      }
+    }
+    return net;
+  }
 }

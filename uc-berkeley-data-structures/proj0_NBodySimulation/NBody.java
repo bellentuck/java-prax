@@ -23,4 +23,22 @@ class NBody {
     }
     return planets;
   }
+
+  public static void main(String[] args) {
+    double T = Double.parseDouble(args[0]);
+    double dt = Double.parseDouble(args[1]);
+    String filename = args[2];
+    double radius = NBody.readRadius(filename);
+    Planet[] planets = NBody.readPlanets(filename);
+
+    StdDraw.setScale(-radius, radius);
+    StdDraw.clear();
+    StdDraw.picture(0, 0, "images/starfield.jpg");
+
+    for (Planet p : planets) {
+      p.draw();
+    }
+
+    StdDraw.show();
+  }
 }

@@ -82,4 +82,16 @@ class Planet {
     }
     return net;
   }
+
+  public void update(double dt, double fX, double fY) {
+    // determines how much the forces exerted on the planet will cause that planet to accelerate, and the resulting change in the planet’s velocity and position in a small period of time dt.
+    double xAccel = fX / mass;
+    double yAccel = fY / mass;
+
+    xxVel += dt * xAccel;
+    yyVel += dt * yAccel;
+
+    xxPos += dt * xxVel;
+    yyPos += dt * yyVel;
+  }
 }

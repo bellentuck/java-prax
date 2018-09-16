@@ -45,4 +45,21 @@ class Planet {
     double r = this.calcDistance(p);  // dist btwn planets
     return (G * this.mass * p.mass) / (r * r);
   }
+
+  public double calcForceExertedByX(Planet p) {
+    // returns a double describing the force exerted on this planet by the given planet, in the x direction only.
+    // Fx = (F * dx) / r
+    double F = this.calcForceExertedBy(p);
+    double dx = this.xxPos - p.xxPos;
+    double r = this.calcDistance(p);
+    return -((F * dx) / r);
+  }
+
+  public double calcForceExertedByY(Planet p) {
+    // returns a double describing the force exerted on this planet by the given planet, in the y direction only.
+    double F = this.calcForceExertedBy(p);
+    double dy = this.yyPos - p.yyPos;
+    double r = this.calcDistance(p);
+    return -((F * dy) / r);
+  }
 }

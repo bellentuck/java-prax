@@ -26,4 +26,14 @@ class Planet {
     mass = p.mass;
     imgFileName = p.imgFileName;
   }
+
+  public double calcDistance(Planet p) {
+    // should return a double equal to the distance between the supplied planet and the planet that is doing the calculation
+    // (r^2)^(1/2) = (dx^2 + dy^2)^(1/2) = r = distance
+    // dx = this.xxPos - p.xxPos
+    // dy = this.yyPos - p.yyPos
+    double dx = this.xxPos - p.xxPos;
+    double dy = this.yyPos - p.yyPos;
+    return Math.sqrt(dx*dx + dy*dy);
+  }
 }
